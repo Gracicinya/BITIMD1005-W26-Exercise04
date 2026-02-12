@@ -6,6 +6,8 @@ img {
     Add styles to make images scale with their container
     hint: max-width, height
   */
+  max-width: 100%;
+  height: auto;
 }
 
 /* BASE STYLES (Mobile First) */
@@ -25,6 +27,9 @@ header {
     Use Flexbox to stack logo and nav vertically on mobile
     hint: display, flex-direction, gap
   */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .logo {
@@ -38,6 +43,9 @@ nav {
     Use Flexbox to stack links vertically
     hint: display, flex-direction, gap
   */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 nav a {
@@ -53,6 +61,9 @@ main {
     Use max-width to constrain content
     Center with margin auto
   */
+  padding: 10px;
+  max-width: 100%;
+  margin: auto;
 }
 
 /* Hero Section */
@@ -69,6 +80,7 @@ main {
     TASK 6 (BONUS): Use clamp() for fluid font-size
     hint: clamp(min, preferred, max)
   */
+  font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
 .hero button, .cta button {
@@ -99,6 +111,9 @@ main {
     Single column on mobile
     Add gap between cards
   */
+  display: grid;
+  grid-template-columns: auto;
+  gap: 5px;
 }
 
 .card {
@@ -142,29 +157,59 @@ footer {
 /* TABLET BREAKPOINT (768px) */
 
 /* TASK 8: Add media query for tablets and up */
-/*
+
   @media (min-width: 768px) {
 
-    Header: make logo and nav side by side (row, space-between)
+    /* Header: make logo and nav side by side (row, space-between)
 
     Nav: make links horizontal (row)
 
-    Card grid: 2 columns
+    Card grid: 2 columns */
+    header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
 
+    nav {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
   }
-*/
+
 
 /* DESKTOP BREAKPOINT (1024px) */
 
 /* TASK 9: Add media query for desktops and up */
-/*
+
   @media (min-width: 1024px) {
 
-    Card grid: 3 columns
+    /* Card grid: 3 columns
 
     Hero: increase padding
 
-    Add any other enhancements for larger screens
+    Add any other enhancements for larger screens */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
 
+    .hero {
+      padding: 50px;
+    }   
+    
+    nav {
+      display: flex;
+      flex-direction: row;
+      gap: 15px; 
+    }
   }
-*/
+
